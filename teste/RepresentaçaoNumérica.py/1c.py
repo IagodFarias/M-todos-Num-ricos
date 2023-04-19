@@ -1,7 +1,8 @@
+
+
+
 from math import e, sqrt, log
-c = log(0.2) + log(3,10)
-b = sqrt(c)
-a = sqrt(b)
+a = sqrt(1.2 + sqrt(log(0.2) + log(10,3)) + e**2)
 print(f'{a}')
 
 

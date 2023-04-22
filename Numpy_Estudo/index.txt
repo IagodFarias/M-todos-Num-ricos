@@ -1,0 +1,7 @@
+Alguns métodos do Numpy
+
+array = np.arange(start, end, passo) - devolve um array de tamanho 1, com os valores de start até end - 1
+array.reshape (linha, coluna) - formata um array no shape pedido
+
+array.shape - devolve o número de linhas e colunas de uma matriz
+array.size  - devolve o número de elementos em um array

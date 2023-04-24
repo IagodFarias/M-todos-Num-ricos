@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 
 
 import numpy as np 
@@ -69,10 +67,16 @@ class raizes:
         plt.ylabel("Erro")
         plt.show()
 
+
+
+
+
     def posicao_falsa(self, a, b):
 
         xrold = 0
         cont = 0
+        erros = [] # lista para armazenar os erros em cada iteração
+        lista_raizes = [] # lista para armazenar as raízes em cada iteração
 
         while True:
             self.x = ((a * self.f(b)) - (b * self.f(a))) / (self.f(b) - self.f(a))
@@ -90,14 +94,22 @@ class raizes:
             xrold = self.x
             self.iter = cont
 
+            erros.append(self.erro) # adiciona o erro à lista
+            lista_raizes.append(self.x) # adiciona a raiz à lista
+
             if self.erro <= self.Emax or cont >= self.maxit:
-                break       
-       
+                break
 
+    # plotar os gráficos de convergência de erro e raiz
+        plt.figure(figsize=(8, 6))
+        plt.plot(lista_raizes, 'g-', label='Raiz')
+        plt.legend()
+        plt.xlabel('Iterações')
+        plt.ylabel('Valor')
+        plt.title('Convergência da Posição Falsa')
+        plt.show()
 
-r = raizes(lambda x: x**2 - 7)
-
-# chama o método bissecao do objeto r
+r = raizes(lambda x: x**2 - 5)
 #r.bissecao(2, 3)
 #print(f"Raiz encontrada: {r.x}")
 
@@ -106,17 +118,4 @@ print(f"Raiz encontrada: {r.x}")
 
 
 
-    
-=======
-digito = inp
-base = 2
-q = digito / base
 
-while True:
-    if q != 0:   
-        q = q // base
-        bin = q % base
-        print(f"{bin:.0f}")
-    else: break
->>>>>>> ea4d58cabc37119e6bb2a92f4d3391a9571534e1
-    
